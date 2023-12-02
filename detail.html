@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ScenixPhoto ~ Website Pemotretan Pemandangan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Menyisipkan CSS Bootstrap -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: var(--bs-body-bg); color: var(--bs-body-color)">
+      <div class="container justify-content-between">
+        <a class="navbar-brand d-flex align-items-center fst-italic order-first me-auto me-lg-4" href="index.html">
+          <img src="img/logo.png" alt="logo" class="me-2" width="35px" />
+          <span style="color: #ffa024">Scenix</span>
+          <span>|</span>
+          <span style="color: #2badf9">Photo</span>
+        </a>
+        <button
+          class="navbar-toggler p-1 border-0 order-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between order-3" id="navbarNavAltMarkup">
+          <ul class="navbar-nav pop me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link mt-3 mt-lg-0" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" style="background-color: var(--bs-body-bg); color: var(--bs-body-color)" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gallery
+              </button>
+              <ul class="dropdown-menu mt-md-2">
+                <li><h6 class="dropdown-header">Select Panorama</h6></li>
+                <li><a class="dropdown-item" href="gallery.html">Mountain</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Beach</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Underwater</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Lake</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Waterfall</a></li>
+                <li><a class="dropdown-item" href="notfound.html">River</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Cave</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Snow</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Forest</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index2.html">Article</a>
+            </li>
+            <hr class="nav-item border-bottom my-2" />
+            <li id="hide1" class="nav-item">
+              <a class="nav-link d-lg-none" href="login.html">Login</a>
+            </li>
+            <li id="hide2" class="nav-item">
+              <a class="nav-link d-lg-none" href="register.html">Sign up</a>
+            </li>
+            <li id="show1" class="nav-item">
+              <button type="button" class="nav-link d-lg-none" onclick="logout()">Logout</button>
+            </li>
+            <hr class="nav-item border-bottom my-2" />
+          </ul>
+          <form class="mx-auto my-3 my-lg-0" role="search">
+            <div class="input-group">
+              <input class="form-control pop" type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-primary" type="submit"><i class="ri-search-line"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="dropdown mt-1 me-1 me-md-2 order-1 order-lg-4 flex-end">
+          <button
+            class="btn dropdown-toggle border-0 fs-5 fs-md-6 px-1 me-1"
+            style="background-color: var(--bs-body-bg); color: var(--bs-body-color)"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i id="iconActive" class="ri-contrast-line"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end pop mt-2 pt-1">
+            <li><h6 class="dropdown-header">Theme</h6></li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light" onclick="changeIcon('ri-sun-line')">
+                <i class="ri-sun-line me-2"></i>Light Theme
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark" onclick="changeIcon('ri-moon-line')">
+                <i class="ri-moon-line me-2"></i>Dark Theme
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto" onclick="changeIcon('ri-contrast-line')">
+                <i class="ri-contrast-line me-2"></i>Device Theme
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="d-none d-lg-inline order-5">
+          <div class="d-flex pop">
+            <a id="hide3" class="nav-link me-3" href="login.html">Login</a>
+            <a id="hide4" class="nav-link" href="register.html">Sign up</a>
+            <button type="button" id="show2" class="nav-link" onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4 mt-md-5">
+      <div class="row">
+        <div class="col-12 col-lg-9">
+          <div class="card pop p-2 pb-md-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="title border-bottom">The Most Beautiful Mountains in the World</h5>
+              <div class="d-md-flex mb-2 border-bottom pb-2">
+                <a href="https://www.gotravelly.com/blog/gunung-terindah-di-dunia/" class="d-flex me-3 nav-link"> <i class="ri-user-fill me-2"></i>GoTravelly </a>
+                <div class="d-flex nav-link me-3"><i class="ri-calendar-2-line me-2"></i>October 27, 2023</div>
+                <div class="d-flex nav-link"><i class="ri-discuss-fill me-2"></i>3 Comments</div>
+              </div>
+              <p>
+                The most beautiful mountain in the world has its own charm and spectacular views. Mountains are one of the tourist attractions visited by many tourists. You can get peace and fresh air
+                when on holiday in the mountains. Besides being able to enjoy the charming views, you can also relax more.
+                <br />
+                By going to the mountains you can release all the fatigue that is on your mind. This is very necessary so that you do not easily experience stress or depression. Taking a vacation can
+                also make you refreshed and increase your productivity when you get home. It's not surprising that many people choose to vacation in the mountains because it is very relaxing.
+                <br />
+                There are many of the most beautiful mountains in the world that you can visit. Every mountain is in the highlands, but some mountains have different locations and have their own
+                uniqueness. You will feel a different sensation every time you visit the mountain. Here are some mountains with spectacular views in the world.
+              </p>
+              <div class="list-group mb-4 mt-4 col-12 col-md-6 col-lg-5 small">
+                <button type="button" class="list-group-item list-group-item-action" disabled>list of contents</button>
+                <a href="#fuji" class="list-group-item list-group-item-action">1. Mount Fuji, Japan </a>
+                <a href="#arenal" class="list-group-item list-group-item-action">2. Mount Arenal, Costa Rica</a>
+                <a href="#st.helens" class="list-group-item list-group-item-action">3. Mount St. Helens, USA</a>
+                <a href="#vesuvius" class="list-group-item list-group-item-action">4. Mount Vesuvius, Italy</a>
+                <a href="#krakatau" class="list-group-item list-group-item-action">5. Mount Krakatoa, Indonesia</a>
+                <a href="#etna" class="list-group-item list-group-item-action">6. Mount Etna, Italy</a>
+                <a href="#klimanjaro" class="list-group-item list-group-item-action">7. Mount Kilimanjaro, Tanzania</a>
+                <a href="#popocatepetl" class="list-group-item list-group-item-action">8. Mount Popocatepetl, Mexico</a>
+                <a href="#thrihnukagigur" class="list-group-item list-group-item-action">9. Mount Thrihnukagigur, Iceland</a>
+                <a href="#bromo" class="list-group-item list-group-item-action">10. Mount Bromo, Indonesia</a>
+              </div>
+              <ul class="list-group">
+                <li class="list-group-item border-0">
+                  <h2 id="fuji">1. Mount Fuji, Japan</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    This mountain is very famous because it is a symbol of Japanese culture. This is what makes tourists curious and want to visit there. The peak of this mountain is covered with
+                    quite thick snow. Apart from that, there are 5 lakes in the surrounding area. This mountain is the center of Japanese history and culture. Around this mountain you can see old
+                    temples and also remains of ancient cultures from ancient times. This is a different attraction and is the centerpiece of the beautiful scenery there. The best time to visit this
+                    mountain is around June to August.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="arenal">2. Mount Arenal, Costa Rica</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Arenal-Kosta-Rika-1024x683.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    This mountain area is surrounded by Mount Arenal National Park which is the best place to enjoy the beauty of lava flows. You also enjoy various natural beauties such as various
+                    species of flora and fauna. This mountain is very comfortable as a vacation spot, there you can do various interesting activities. One of the exciting activities you can do is
+                    riding a bicycle, swimming, white water rafting and so on.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="st.helens">3. Mount St. Helens, USA</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-St.-Helens-USA-1024x692.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    This mountain is famous for its eruption which claimed many victims. During the eruption in 1980, 57 people died and damaged the surrounding area for 600 km. This active volcano is
+                    quite dangerous because it has very strong eruptions. However, this mountain is charming because it is part of the Volcanic Mountain National Monument. This is what makes thousands
+                    of tourists come to this mountain every year. However, visitors are only allowed to travel up to a distance of 6.4 km from the crater location.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="vesuvius">4. Mount Vesuvius, Italy</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Vesuvius-Italia-1024x614.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    is located in a bay called the Bay of Naples. This active volcano last experienced an eruption in 1944. This mountain is part of the Vesuvius National Park which has an important
+                    role in local culture and mythology. There you can see the ruins of previous eruptions.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="krakatau">5. Mount Krakatau, Indonesia</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Krakatau-Indonesia-1024x683.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    This mountain is one type of active mountain in Indonesia. has a charming attraction because it is part of the Ujung Kulon National Park. So it's not surprising that many tourists
+                    want to visit there. In 1883 this mountain experienced a quite violent eruption. As a result of the eruption, volcanic fluid spread and destroyed several areas around it. This
+                    liquid finally hardens and seems to form a new mountain.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="etna">6. Mount Etna, Italy</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Etna-Italia-1024x417.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    is still active today and often emits lava or ash. This mountain is located in the center of Sicily. has a peak covered with snow and inside there are 40 craters. This view is
+                    truly amazing and you can't find it anywhere else. This is what makes many people visit this mountain. It has a height of 3,329 meters above sea level, making this mountain the
+                    highest mountain in Europe. This mountain also rents out jeeps and cable cars to make it easier for tourists to get to the top.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="klimanjaro">7. Mount Kilimanjaro, Tanzania</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Kilimanjaro-Tanzania-1024x768.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    This mountain has a height of 5,895 meters above sea level. From this height, you can enjoy spectacular natural beauty. This mountain looks unique because it has three peaks with
+                    different panoramas. This mountain has a safe path to climb so it will not be difficult for visitors. This makes your holiday even more enjoyable. As many as 20,000 people visit
+                    there every year. On this mountain you can see biodiversity and also many types of animals that live there.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="popocatepetl">8. Mount Popocatepetl, Mexico</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Popocatepetl-Meksiko-1024x680.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    This mountain is also known as Mount El Popo in Mexico. This is an active mountain located 70 km southeast of the city center. In 2013 there was an eruption on this mountain. Even
+                    though it is an active mountain, this mountain has beauty at its peak. At the top of the mountain there is a National Park which attracts many tourists to visit it. There is a
+                    monastery that has been built since the 16th century. This monastery was built by Spanish monks who lived on the slopes of the mountain.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="thrihnukagigur">9. Mount Thrihnukagigur, Iceland</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Thrihnukagigur-Islandia-1024x684.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    gets the title as the most amazing mountain because it has very charming views. This volcano has been inactive since 4,000 years ago. So it is estimated that this mountain will not
+                    be active again. This is what makes this mountain the most amazing tourist attraction. The uniqueness of this mountain is that tourists can explore the inside of the mountain. You
+                    can go 120 m into the inner area to reach the center of the mountain.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  <h2 id="bromo">10. Mount Bromo, Indonesia</h2>
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Bromo-Indonesia-1024x768.jpg" class="mb-3 col-md-4 col-12 float-start rounded-4 me-3" alt="..." />
+                  <p>
+                    The most beautiful mountain in the world has often become the main destination for tourists. Apart from having cool air, this mountain has a beautiful panorama. You can enjoy the
+                    best sunrise from this mountain. There are even beautiful hills in the surrounding area that you can use as photo spots.
+                  </p>
+                </li>
+                <li class="list-group-item border-0">
+                  Not just on holiday, many people also come there to take pre-wedding photos. The charming view makes many people want to immortalize important moments there. After getting some
+                  recommendations for the most beautiful mountains in the world, you can start making a list of which mountains you want to visit first. To be able to go to the mountains you need to
+                  prepare yourself and complete supplies. Some mountains have quite steep and uphill roads, for this you need to use proper footwear.
+                </li>
+                <li class="list-group-item border-0">
+                  You will feel a different sensation when on holiday to the most beautiful mountain in the world. You can even scream as much as you like or meditate on the mountain to get peace in
+                  your mind. That way, you can come back refreshed and live life more enthusiastically. Apart from that, you can also find out more about the many interesting panoramas throughout the
+                  world.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card shadow-sm pop p-2 mt-4">
+            <div class="card-body">
+              <h5 class="title border-bottom">recommendations</h5>
+              <div class="row row-cols-1 row-cols-md-3 g-0">
+                <a href="detail.html" class="col post-title">
+                  <div class="card border-0">
+                    <div class="card-body">
+                      <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" class="img-fluid mb-2" alt="" />
+                      <p class="h5">The Most Beautiful Mountains in the World</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="detail.html" class="col post-title">
+                  <div class="card border-0">
+                    <div class="card-body">
+                      <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" class="img-fluid mb-2" alt="" />
+                      <p class="h5">The Most Beautiful Mountains in the World</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="detail.html" class="col post-title">
+                  <div class="card border-0">
+                    <div class="card-body">
+                      <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" class="img-fluid mb-2" alt="" />
+                      <p class="h5">The Most Beautiful Mountains in the World</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card shadow-sm pop p-2 mt-4">
+            <div class="card-body">
+              <h5 class="title border-bottom">send a comment</h5>
+              <form method="post">
+                <div class="mb-3">
+                  <label for="in1" class="form-label">Email address</label>
+                  <input type="email" class="form-control form-control-lg" id="in1" />
+                </div>
+                <div class="mb-5">
+                  <label for="in2" class="form-label">Comments</label>
+                  <textarea class="form-control form-control-lg" id="in2" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary col-12 col-md-4 col-lg-3">Send</button>
+              </form>
+            </div>
+          </div>
+          <div class="card shadow-sm pop p-2 mt-4">
+            <div class="card-body">
+              <h5 class="title border-bottom">3 comments</h5>
+              <div class="comments">
+                <img src="img/user.png" alt="user" class="w-100" />
+                <div class="comment">
+                  <h6>Roby, <span class="small">2 weeks ago</span></h6>
+                  <p>Good information</p>
+                </div>
+              </div>
+              <div class="comments">
+                <img src="img/user.png" alt="user" class="w-100" />
+                <div class="comment">
+                  <h6>Yadi, <span class="small">3 weeks ago</span></h6>
+                  <p>Thank you for the information</p>
+                </div>
+              </div>
+              <div class="comments">
+                <img src="img/user.png" alt="user" class="w-100" />
+                <div class="comment">
+                  <h6>Rara, <span class="small">1 month ago</span></h6>
+                  <p>Very cool information</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 mt-4 mt-lg-0">
+          <div class="card pop">
+            <div class="card-body shadow-sm">
+              <h6 class="title border-bottom">MOST POPULAR ARTICLES</h6>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+            </div>
+          </div>
+          <div class="card pop mt-4">
+            <div class="card-body shadow-sm">
+              <h6 class="title border-bottom">LATEST ARTICLES</h6>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+            </div>
+          </div>
+          <div class="card pop mt-4">
+            <div class="card-body shadow-sm">
+              <h6 class="title border-bottom">follow me</h6>
+              <div class="socials row row-cols-2 g-2">
+                <div class="col">
+                  <a href="notfound.html" class="facebook"><i class="ri-facebook-circle-fill ri-lg"></i>Facebook</a>
+                </div>
+                <div class="col">
+                  <a href="notfound.html" class="github"><i class="ri-github-fill ri-lg"></i>GitHub</a>
+                </div>
+                <div class="col">
+                  <a href="notfound.html" class="youtube"><i class="ri-youtube-fill ri-lg"></i>Youtube</a>
+                </div>
+                <div class="col">
+                  <a href="notfound.html" class="instagram"><i class="ri-instagram-line ri-lg"></i>Instagram</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-light">
+      <div class="container d-block d-md-flex justify-content-between small pop mt-5 p-3 p-md-2">
+        <p class="text-center my-auto">&copy;Copyright by 22552011054_Muhammad Prasetya Nugroho_221PC</p>
+        <div class="d-flex justify-content-center mt-2 mt-md-0">
+          <a href="index.html" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-home-4-line"></i></a>
+          <a href="index2.html" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-dashboard-line"></i></a>
+          <a href="index.html#contact" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-phone-line"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

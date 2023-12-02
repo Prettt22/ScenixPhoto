@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Tidak Ditemukan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    section.notfound {
+      background: #001427 url(img/p404.png) repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: 500px;
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .pageerror {
+      text-align: center;
+    }
+    .pageerror h1 {
+      color: white;
+      font-size: 8rem;
+      line-height: 1em;
+    }
+    .pageerror h2 {
+      background: #003277;
+      color: white;
+      display: inline-block;
+      font-size: 3em;
+      font-weight: 300;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      position: relative;
+      border-radius: 10px;
+    }
+    .pageerror h3 {
+      color: white;
+      font-size: 1.2em;
+      margin: 1rem 15% 2.5rem;
+    }
+    .pageerror h3 a {
+      color: white;
+    }
+    .pageerror button {
+      background: #ff0562;
+      border-bottom: 4px solid #9c0039;
+      border-radius: 25px;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin: auto;
+      margin-top: 25px;
+      padding: 10px 25px;
+      position: relative;
+      font-size: 1rem;
+      border: 0;
+      cursor: pointer;
+    }
+    .pageerror button:hover {
+      background: #df0052;
+    }
+    .pageerror button:active {
+      background: #b60043;
+    }
+  </style>
+</head>
+<body>
+  <section class="notfound">
+    <div class="pageerror">
+      <h1>404</h1>
+      <h2>Not Found</h2>
+      <h3>The page you are looking for does not exist. You may have typed the address incorrectly or the page may have moved.</h3>
+      <button type="button" onclick="history.back()">Kembali</button>
+    </div>
+  </section>
+</body>
+</html>

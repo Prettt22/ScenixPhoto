@@ -1,0 +1,233 @@
+@import url(../fonts/remixicon/remixicon.css);
+@import url(../fonts/poppins/poppins.css);
+
+[data-bs-theme="dark"] body {
+  background-color: #171a1d;
+}
+[data-bs-theme="light"] body {
+  background-color: #f5f5f5;
+}
+.pop {
+  font-family: "Poppins";
+}
+.navbar-brand {
+  font-weight: 800;
+}
+.nav-link.active {
+  font-weight: bold;
+}
+.bg-custom {
+  background: url("https://whatsnewindonesia.com/sites/default/files/inline-images/Kintamani.jpg") no-repeat center center fixed;
+  background-size: cover;
+  
+}
+.title {
+  position: relative;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.title:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 80px;
+  height: 5px;
+  background-color: var(--bs-primary);
+}
+.post-title {
+  text-decoration: none;
+  margin-bottom: 5px;
+  font-family: "Poppins Medium";
+}
+small {
+  font-size: 0.75rem;
+}
+.socials a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 400;
+  padding: 8px;
+  border-radius: 5px;
+  transition: 0.123s;
+}
+.socials a:visited {
+  color: white;
+}
+.socials i {
+  margin-right: 4px;
+  font-size: 1.2rem;
+}
+.facebook {
+  background-color: #3c5a99;
+}
+.facebook:hover {
+  background-color: #37528b;
+}
+.github {
+  background-color: #000;
+}
+.github:hover {
+  background-color: #333;
+}
+.youtube {
+  background-color: #ff0000;
+}
+.youtube:hover {
+  background-color: #e70000;
+}
+.instagram {
+  background: linear-gradient(15deg, #ffdc80 0%, #e0195c 50%, #5851db 100%);
+}
+.instagram:hover {
+  background: linear-gradient(15deg, #ffb700 0%, #e6164a 50%, #0d00ff 100%);
+}
+.carousel-indicators button {
+  background-color: white !important;
+}
+.card:hover .card-img {
+  filter: brightness(60%);
+}
+.card-img-overlay .card-title {
+  font-family: "Poppins Medium";
+  color: white;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+.side {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}
+[data-bs-theme="light"] .card.border-0:hover,
+[data-bs-theme="light"] .side:hover {
+  background-color: #ececec;
+}
+[data-bs-theme="light"] .card.border-0:active,
+[data-bs-theme="light"] .side:active {
+  background-color: #dee2e6;
+}
+[data-bs-theme="dark"] .card.border-0:hover,
+[data-bs-theme="dark"] .side:hover {
+  background-color: #343a40;
+}
+[data-bs-theme="dark"] .card.border-0:active,
+[data-bs-theme="dark"] .side:active {
+  background-color: #495057;
+}
+.mxw {
+  max-width: 75%;
+}
+.screen button,
+.screen input {
+  font-family: "Poppins Medium";
+  letter-spacing: 1.4px;
+}
+.screen {
+  background-image: url(../img/lake.jpg);
+  background-size: cover;
+}
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--bs-body-bg);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.ap-close,
+.ap-maximize,
+.ap-minimize {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+.ap-close {
+  background: #ed1c6f;
+}
+.ap-maximize {
+  background: #e8e925;
+}
+.ap-minimize {
+  background: #74c54f;
+}
+.ap-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #bbb;
+  color: #eee;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.app-form-control::placeholder {
+  color: #999;
+}
+.app-form-control:focus {
+  border-bottom-color: #fff;
+}
+.app-form-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.app-form-button:hover {
+  color: #ffa024;
+}
+.comments {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 2rem;
+}
+footer {
+  margin-top: 7rem;
+}
+
+@media screen and (max-width: 992px) {
+  .mxw {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .screen-body {
+    flex-direction: column;
+    padding: 40px;
+  }
+  .screen-body-item {
+    padding: 0;
+  }
+
+  .screen-body-item.left {
+    margin-bottom: 30px;
+  }
+
+  .app-title {
+    flex-direction: row;
+  }
+
+  .app-title span {
+    margin-right: 12px;
+  }
+
+  .app-title::after {
+    display: none;
+  }
+}

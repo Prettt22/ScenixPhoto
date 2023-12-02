@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ScenixPhoto ~ Find the best scenic photos using Scenix|Photo services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Menyisipkan CSS Bootstrap -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: var(--bs-body-bg); color: var(--bs-body-color)">
+      <div class="container justify-content-between">
+        <a class="navbar-brand d-flex align-items-center fst-italic order-first me-auto me-lg-4" href="index.html">
+          <img src="img/logo.png" alt="logo" class="me-2" width="35px" />
+          <span style="color: #ffa024">Scenix</span>
+          <span>|</span>
+          <span style="color: #2badf9">Photo</span>
+        </a>
+        <button
+          class="navbar-toggler p-1 border-0 order-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between order-3" id="navbarNavAltMarkup">
+          <ul class="navbar-nav pop me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link mt-3 mt-lg-0 active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" style="background-color: var(--bs-body-bg); color: var(--bs-body-color)" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gallery
+              </button>
+              <ul class="dropdown-menu mt-md-2">
+                <li><h6 class="dropdown-header">Select Panorama</h6></li>
+                <li><a class="dropdown-item" href="gallery.html">Mountain</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Beach</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Underwater</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Lake</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Waterfall</a></li>
+                <li><a class="dropdown-item" href="notfound.html">River</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Cave</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Snow</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Forest</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index2.html">Article</a>
+            </li>
+            <hr class="nav-item border-bottom my-2" />
+            <li id="hide1" class="nav-item">
+              <a class="nav-link d-lg-none" href="login.html">Login</a>
+            </li>
+            <li id="hide2" class="nav-item">
+              <a class="nav-link d-lg-none" href="register.html">Sign up</a>
+            </li>
+            <li id="show1" class="nav-item">
+              <button type="button" class="nav-link d-lg-none" onclick="logout()">Logout</button>
+            </li>
+            <hr class="nav-item border-bottom my-2" />
+          </ul>
+          <form class="mx-auto my-3 my-lg-0" role="search">
+            <div class="input-group">
+              <input class="form-control pop" type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-primary" type="submit"><i class="ri-search-line"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="dropdown mt-1 me-1 me-md-2 order-1 order-lg-4 flex-end">
+          <button
+            class="btn dropdown-toggle border-0 fs-5 fs-md-6 px-1 me-1"
+            style="background-color: var(--bs-body-bg); color: var(--bs-body-color)"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i id="iconActive" class="ri-contrast-line"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end pop mt-2 pt-1">
+            <li><h6 class="dropdown-header">Theme</h6></li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light" onclick="changeIcon('ri-sun-line')">
+                <i class="ri-sun-line me-2"></i>Light Theme
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark" onclick="changeIcon('ri-moon-line')">
+                <i class="ri-moon-line me-2"></i>Dark Theme
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto" onclick="changeIcon('ri-contrast-line')">
+                <i class="ri-contrast-line me-2"></i>Device Theme
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="d-none d-lg-inline order-5">
+          <div class="d-flex pop">
+            <a id="hide3" class="nav-link me-3" href="login.html">Login</a>
+            <a id="hide4" class="nav-link" href="register.html">Sign up</a>
+            <button type="button" id="show2" class="nav-link" onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid mt-3">
+      <div class="p-4 p-lg-5 mb-4 shadow bg-custom rounded-4">
+        <div class="text-center text-white py-4" style="text-shadow: 2px 2px 0px rgba(0,0,0,1);">
+          <h1 class="fw-bold display-4">Welcome to Scenix|Photo</h1>
+          <p class="fs-4 fw-bold">Find the best scenic photos using Scenix|Photo services.</p>
+          <a href="index2.html" class="btn btn-primary btn-lg px-5">See Articles</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row pop">
+        <div class="col-12 my-5">
+          <h3 class="text-uppercase display-6 text-center my-5 pb-5 fw-bold">What are you looking for?</h3>
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner px-5">
+              <div class="carousel-item active">
+                <div class="row g-2">
+                  <div class="col-4">
+                    <a href="gallery.html" class="card text-bg-dark border-0">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9H8moEvt0Ug0X72BTvE4DyWllLXWvFgRvyw&usqp=CAU" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h1 class="card-title text-uppercase d-md-block d-none">Mountain</h1>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-4">
+                    <a href="notfound.html" class="card text-bg-dark border-0">
+                      <img src="https://media.cntraveller.com/photos/611be91fa86777b29fbc4f00/16:9/w_2580,c_limit/beach-at-porthcurno-saint-levan-cornwall-conde-nast-traveller-18aug16-alamy.jpg" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h1 class="card-title text-uppercase d-md-block d-none">Beach</h1>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-4">
+                    <a href="notfound.html" class="card text-bg-dark border-0">
+                      <img src="https://wallpapers.com/images/hd/underwater-ocean-background-u5vehg0gvrdfbas5.jpg" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h2 class="card-title text-uppercase d-md-block d-none">Underwater</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row g-2">
+                  <div class="col-4">
+                    <a href="notfound.html" class="card text-bg-dark border-0">
+                      <img src="https://wallpapercrafter.com/desktop2/801182-slovenia-fabolous-scenic-romantic-tree-lanterns.jpg" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h1 class="card-title text-uppercase d-md-block d-none">Lake</h1>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-4">
+                    <a href="notfound.html" class="card text-bg-dark border-0">
+                      <img src="https://million-wallpapers.ru/wallpapers/2/64/13233080175574280903/waterfall-in-distant-lands.jpg" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h1 class="card-title text-uppercase d-md-block d-none">Waterfall</h1>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-4">
+                    <a href="notfound.html" class="card text-bg-dark border-0">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-mIHtxGyqj3uAmYYrHSo6C2kaV8pNRl9tIw&usqp=CAU" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h1 class="card-title text-uppercase d-md-block d-none">River</h1>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row g-2">
+                  <div class="col-4">
+                    <a href="notfound.html" class="card text-bg-dark border-0">
+                      <img src="https://eu-assets.simpleview-europe.com/shapedbyseaandstone/imageresizer/?image=%2Fdbimgs%2FMEA%20Gallery%20-%20Gobbins%20Suspension%20Bridge%281%29.jpg&action=FeaturedItemsScroll20193x2" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h1 class="card-title text-uppercase d-md-block d-none">Cave</h1>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-4">
+                    <a href="notfound.html" class="card text-bg-dark border-0">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMI_WgKlAEN3eccfZYcCInblEQmjMq-SOHTg&usqp=CAU" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h1 class="card-title text-uppercase d-md-block d-none">Snow</h1>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-4">
+                    <a href="notfound.html" class="card text-bg-dark border-0">
+                      <img src="https://www.devonfield.com/wp-content/uploads/devonfield-blog-forests-new-1920x1080.jpg" class="card-img" alt="...">
+                      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <h1 class="card-title text-uppercase d-md-block d-none">Forest</h1>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev link-body-emphasis" style="font-size: 4rem; width: 40px;" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <i class="ri-arrow-left-s-line"></i>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next link-body-emphasis" style="font-size: 4rem; width: 40px;" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <i class="ri-arrow-right-s-line"></i>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <h3 class="text-uppercase display-6 text-center my-5 pb-5 fw-bold">About us</h3>
+          <p class="text-center w-md-75 mx-auto mxw">
+            (Indonesian) ScenixPhoto adalah perusahaan yang berfokus pada pengambilan foto pemandangan alam yang menakjubkan. Nama ScenixPhoto merupakan kombinasi dari "scenic", yang berarti pemandangan, dan "foto", yang merupakan kependekan dari fotografi. ScenixPhoto berspesialisasi dalam menyediakan layanan fotografi profesional yang menampilkan keindahan suasana alam. Layanan kami tersedia untuk berbagai acara yang memerlukan latar belakang yang indah. Dengan pengalaman lebih dari 5 tahun di bidangnya, ScenixPhoto telah mendapatkan reputasi sebagai perusahaan yang dapat diandalkan dan mahir dalam mengatasi tantangan dan rintangan yang ada di lokasi berbahaya. Apapun kebutuhan fotografi Anda, Anda dapat mempercayai ScenixPhoto untuk memberikan hasil yang luar biasa.
+            <br />
+            (English) ScenixPhoto is a company that focuses on capturing stunning photographs of natural landscapes. The name ScenixPhoto is a combination of "scenic," which refers to beautiful scenery, and "photo," which is short for photography. At ScenixPhoto, we specialize in providing professional photography services that showcase the beauty of natural settings. Our services are available for a wide range of events that call for picturesque backgrounds. With more than 5 years of experience in the field, ScenixPhoto has earned a reputation as a company that is reliable and adept at overcoming the challenges and obstacles that exist in dangerous locations. Whatever your photography needs, you can trust ScenixPhoto to deliver extraordinary results.
+          </p>
+        </div>
+        <div class="col-12 px-lg-5">
+          <h3 class="text-uppercase display-6 text-center my-5 py-5 fw-bold">Mission Vision & Values</h3>
+          <div class="row px-lg-5 mx-lg-5">
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card text-bg-danger text-center rounded-4">
+                <div class="card-header">
+                  Mission Vision & Values
+                </div>
+                <div class="card-body p-4">
+                  <h5 class="card-title">Our Mission</h5>
+                  <p class="card-text">Our mission is to provide the best quality and service to our customers. We are committed to excellence and innovation in everything we do.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card text-bg-primary text-center rounded-4">
+                <div class="card-header">
+                  Mission Vision & Values
+                </div>
+                <div class="card-body p-4">
+                  <h5 class="card-title">Our Vision</h5>
+                  <p class="card-text">Our vision is to be a provider of the best and extraordinary quality photos. We aim to create value and make a difference for our customers and society.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card text-bg-success text-center rounded-4">
+                <div class="card-header">
+                  Mission Vision & Values
+                </div>
+                <div class="card-body p-4">
+                  <h5 class="card-title">Our Values</h5>
+                  <p class="card-text">Our values are the core of our culture and guide our actions. We value integrity, teamwork, customer satisfaction, creativity, and social responsibility.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <h3 class="display-6 text-center my-5 py-5 fw-bold display-1">FAQ</h3>
+          <div class="accordion accordion-flush mxw mx-auto shadow-sm border" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  How to order our service?
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">You only need to contact us below about your needs, and we will contact you back later.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  How much does it cost for one service?
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">This can be determined by how far away the location is, but don't worry because the price can still be negotiated</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  What services do we provide?
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">We provide professional quality photo shooting services</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <h3 id="contact" class="text-uppercase display-6 text-center my-5 py-5 fw-bold">Contact us</h3>
+          <div class="screen mxw shadow mx-auto rounded-4">
+            <div class="screen-header mb-md-3">
+              <div class="me-auto">
+                <div class="ap-close"></div>
+                <div class="ap-maximize"></div>
+                <div class="ap-minimize"></div>
+              </div>
+              <div class="d-flex">
+                <div class="ap-ellipsis"></div>
+                <div class="ap-ellipsis"></div>
+                <div class="ap-ellipsis"></div>
+              </div>
+            </div>
+            <div class="row p-5">
+              <div class="col-12 col-lg-6 text-white">
+                <h2 class="title">CONTACT US</h2>
+                <p>
+                  Do you have any questions? Don't hesitate to contact us directly. Our team will get back to you within hours to help you.
+                  <br><br>
+                  Contact Info: scenixphoto@gmail.com
+                </p>
+              </div>
+              <div class="col-12 col-lg-6">
+                <form method="post">
+                  <input class="app-form-control mb-3" placeholder="NAME" />
+                  <input class="app-form-control mb-3" placeholder="EMAIL" />
+                  <input class="app-form-control mb-3" placeholder="SUBJECT" />
+                  <input class="app-form-control mt-3" placeholder="MESSAGE" />
+                  <div class="text-end mt-4">
+                    <button type="reset" class="app-form-button">CANCEL</button>
+                    <button type="submit" class="app-form-button">SEND</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-light">
+      <div class="container d-block d-md-flex justify-content-between small pop p-3 p-md-2">
+        <p class="text-center my-auto">&copy;Copyright by 22552011054_Muhammad Prasetya Nugroho_221PC</p>
+        <div class="d-flex justify-content-center mt-2 mt-md-0">
+          <a href="index.html" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-home-4-line"></i></a>
+          <a href="index2.html" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-dashboard-line"></i></a>
+          <a href="index.html#contact" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-phone-line"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

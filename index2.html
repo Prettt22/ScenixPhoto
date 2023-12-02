@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ScenixPhoto ~ Website Pemotretan Pemandangan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Menyisipkan CSS Bootstrap -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: var(--bs-body-bg); color: var(--bs-body-color)">
+      <div class="container justify-content-between">
+        <a class="navbar-brand d-flex align-items-center fst-italic order-first me-auto me-lg-4" href="index.html">
+          <img src="img/logo.png" alt="logo" class="me-2" width="35px" />
+          <span style="color: #ffa024">Scenix</span>
+          <span>|</span>
+          <span style="color: #2badf9">Photo</span>
+        </a>
+        <button
+          class="navbar-toggler p-1 border-0 order-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between order-3" id="navbarNavAltMarkup">
+          <ul class="navbar-nav pop me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link mt-3 mt-lg-0" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" style="background-color: var(--bs-body-bg); color: var(--bs-body-color)" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gallery
+              </button>
+              <ul class="dropdown-menu mt-md-2">
+                <li><h6 class="dropdown-header">Select Panorama</h6></li>
+                <li><a class="dropdown-item" href="gallery.html">Mountain</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Beach</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Underwater</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Lake</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Waterfall</a></li>
+                <li><a class="dropdown-item" href="notfound.html">River</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Cave</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Snow</a></li>
+                <li><a class="dropdown-item" href="notfound.html">Forest</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="index2.html">Article</a>
+            </li>
+            <hr class="nav-item border-bottom my-2" />
+            <li id="hide1" class="nav-item">
+              <a class="nav-link d-lg-none" href="login.html">Login</a>
+            </li>
+            <li id="hide2" class="nav-item">
+              <a class="nav-link d-lg-none" href="register.html">Sign up</a>
+            </li>
+            <li id="show1" class="nav-item">
+              <button type="button" class="nav-link d-lg-none" onclick="logout()">Logout</button>
+            </li>
+            <hr class="nav-item border-bottom my-2" />
+          </ul>
+          <form class="mx-auto my-3 my-lg-0" role="search">
+            <div class="input-group">
+              <input class="form-control pop" type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-primary" type="submit"><i class="ri-search-line"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="dropdown mt-1 me-1 me-md-2 order-1 order-lg-4 flex-end">
+          <button
+            class="btn dropdown-toggle border-0 fs-5 fs-md-6 px-1 me-1"
+            style="background-color: var(--bs-body-bg); color: var(--bs-body-color)"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i id="iconActive" class="ri-contrast-line"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end pop mt-2 pt-1">
+            <li><h6 class="dropdown-header">Theme</h6></li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light" onclick="changeIcon('ri-sun-line')">
+                <i class="ri-sun-line me-2"></i>Light Theme
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark" onclick="changeIcon('ri-moon-line')">
+                <i class="ri-moon-line me-2"></i>Dark Theme
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto" onclick="changeIcon('ri-contrast-line')">
+                <i class="ri-contrast-line me-2"></i>Device Theme
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="d-none d-lg-inline order-5">
+          <div class="d-flex pop">
+            <a id="hide3" class="nav-link me-3" href="login.html">Login</a>
+            <a id="hide4" class="nav-link" href="register.html">Sign up</a>
+            <button type="button" id="show2" class="nav-link" onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4 mt-md-5">
+      <div class="row">
+        <div class="col-12 col-lg-9">
+          <div class="card pop p-2 pb-md-0">
+            <div class="card-body shadow-sm">
+              <h5 class="title border-bottom">LATEST ARTICLES</h5>
+              <div class="d-flex flex-column border-bottom">
+                <a class="link-body-emphasis post-title fs-5" href="detail.html">The Most Beautiful Mountains in the World</a>
+                <small>
+                  By
+                  <a href="https://www.gotravelly.com/blog/gunung-terindah-di-dunia/" class="text-decoration-none text-primary">GoTravelly</a>
+                  &dash; 1 month ago
+                </small>
+                <div class="pt-3 d-md-flex">
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" class="col-md-4 mb-3 me-md-4 img-fluid" alt="..." />
+                  <div class="d-flex flex-column w-100">
+                    <p>The most beautiful mountain in the world has its own charm and spectacular views. Mountains are one of the tourist attractions visited by many tourists. You can get peace and fresh air when on holiday in the mountains...</p>
+                    <a href="detail.html" class="link-body-emphasis">Read more...</a>
+                    <small class="d-flex justify-content-end mt-auto mb-3">3 Comments</small>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-column mt-3 border-bottom">
+                <a class="link-body-emphasis post-title fs-5" href="detail.html">The Most Beautiful Mountains in the World</a>
+                <small>
+                  By
+                  <a href="https://www.gotravelly.com/blog/gunung-terindah-di-dunia/" class="text-decoration-none text-primary">GoTravelly</a>
+                  &dash; 1 month ago
+                </small>
+                <div class="pt-3 d-md-flex">
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" class="col-md-4 mb-3 me-md-4 img-fluid" alt="..." />
+                  <div class="d-flex flex-column w-100">
+                    <p>The most beautiful mountain in the world has its own charm and spectacular views. Mountains are one of the tourist attractions visited by many tourists. You can get peace and fresh air when on holiday in the mountains...</p>
+                    <a href="detail.html" class="link-body-emphasis">Read more...</a>
+                    <small class="d-flex justify-content-end mt-auto mb-3">3 Comments</small>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-column mt-3">
+                <a class="link-body-emphasis post-title fs-5" href="detail.html">The Most Beautiful Mountains in the World</a>
+                <small>
+                  By
+                  <a href="https://www.gotravelly.com/blog/gunung-terindah-di-dunia/" class="text-decoration-none text-primary">GoTravelly</a>
+                  &dash; 1 month ago
+                </small>
+                <div class="pt-3 d-md-flex">
+                  <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" class="col-md-4 mb-3 me-md-4 img-fluid" alt="..." />
+                  <div class="d-flex flex-column w-100">
+                    <p>The most beautiful mountain in the world has its own charm and spectacular views. Mountains are one of the tourist attractions visited by many tourists. You can get peace and fresh air when on holiday in the mountains...</p>
+                    <a href="detail.html" class="link-body-emphasis">Read more...</a>
+                    <small class="d-flex justify-content-end mt-auto mb-3">3 Comments</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 mt-4 mt-lg-0">
+          <div class="card pop">
+            <div class="card-body shadow-sm">
+              <h6 class="title border-bottom">MOST POPULAR ARTICLES</h6>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+              <a href="detail.html" class="side p-3 small">
+                <img src="https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang-1024x640.jpg" alt="..." class="col-4 my-auto me-3 img-fluid" />
+                The Most Beautiful Mountains in the World
+              </a>
+            </div>
+          </div>
+          <div class="card pop mt-4">
+            <div class="card-body shadow-sm">
+              <h6 class="title border-bottom">follow me</h6>
+              <div class="socials row row-cols-2 g-2">
+                <div class="col">
+                  <a href="notfound.html" class="facebook"><i class="ri-facebook-circle-fill ri-lg"></i>Facebook</a>
+                </div>
+                <div class="col">
+                  <a href="notfound.html" class="github"><i class="ri-github-fill ri-lg"></i>GitHub</a>
+                </div>
+                <div class="col">
+                  <a href="notfound.html" class="youtube"><i class="ri-youtube-fill ri-lg"></i>Youtube</a>
+                </div>
+                <div class="col">
+                  <a href="notfound.html" class="instagram"><i class="ri-instagram-line ri-lg"></i>Instagram</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-light">
+      <div class="container d-block d-md-flex justify-content-between small pop mt-5 p-3 p-md-2">
+        <p class="text-center my-auto">&copy;Copyright by 22552011054_Muhammad Prasetya Nugroho_221PC</p>
+        <div class="d-flex justify-content-center mt-2 mt-md-0">
+          <a href="index.html" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-home-4-line"></i></a>
+          <a href="index2.html" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-dashboard-line"></i></a>
+          <a href="index.html#contact" class="btn btn-dark rounded-circle pb-1 fs-4"><i class="ri-phone-line"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
